@@ -1,1 +1,7 @@
-/assets/images/
+# Rendszerfájlok és függőségek tiltása
+node_modules/
+.DS_Store
+Thumbs.db
+
+# A képeket (assets/images) MOSTANTÓL ENGEDJÜK feltölteni,
+# hogy a GitHub Pages meg tudja őket jeleníteni.
