@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="hu" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bécsi Orsi edző - Hormon-barát Edzés</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e65e",
+                        "background-light": "#fbfaf8", // Modified to off-white/beige tone as requested
+                        "background-dark": "#112116",
+                        "terracotta": "#e07a5f", // Muted red/coral for CTA
+                        "soft-gray": "#f0f2f0",
+                        "text-main": "#2d3430",
+                        "text-muted": "#5c6b63",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+    body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+    }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main transition-colors duration-200">
+
+    <!-- Top Navigation -->
+    <nav class="w-full px-6 py-4 md:px-12 lg:px-20 border-b border-black/5 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3 text-text-main dark:text-white">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV2FqNqT55c-F5yv6s13X1g4V2t8B6u4J5q7N3x2L1o9K0y4W8z6R3d7H1b0C5k9E4m3F2t1G8h7J6u5L0o4N3p2Q8s1T7v6W9x5Y3u2H1o0L4p3Q8r7T6v5W9x4Y3" 
+                     alt="Bécsi Orsi" 
+                     class="w-10 h-10 rounded-full object-cover shadow-sm border border-black/5 dark:border-white/10">
+                <span class="text-xl font-light tracking-tight">Bécsi Orsi edző</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#method" class="text-sm font-medium text-text-muted hover:text-text-main dark:text-gray-400 dark:hover:text-white transition-colors">Módszerem</a>
+                <a href="#about" class="text-sm font-medium text-text-muted hover:text-text-main dark:text-gray-400 dark:hover:text-white transition-colors">Rólam</a>
+                <a href="#location" class="text-sm font-medium text-text-muted hover:text-text-main dark:text-gray-400 dark:hover:text-white transition-colors">Helyszín</a>
+            </div>
+
+            <a href="tel:+36203707350" class="hidden md:flex items-center gap-2 text-sm font-medium text-text-main hover:text-terracotta transition-colors dark:text-white">
+                <span class="material-symbols-outlined text-[20px]">call</span>
+                +36 20 370 7350
+            </a>
+            
+            <button class="md:hidden p-2 text-text-main dark:text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative flex flex-col lg:flex-row min-h-[calc(100vh-80px)] w-full max-w-[1440px] mx-auto overflow-hidden" id="home">
+        
+        <!-- Left Content (Text & Narrative) -->
+        <!-- Updated padding: reduced vertical padding on mobile (pt-12 pb-2) -->
+        <div class="flex-1 flex flex-col justify-center px-6 pt-12 pb-2 md:px-12 lg:pl-20 lg:pr-10 xl:pr-16 lg:py-12 z-10">
+            <div class="max-w-xl">
+                <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-[#e8f3ec] dark:bg-green-900/30 w-fit">
+                    <span class="material-symbols-outlined text-sm text-[#5c8a6f] dark:text-green-400">medical_services</span>
+                    <span class="text-xs font-medium text-[#5c8a6f] uppercase tracking-wider dark:text-green-400">Hormon-barát mozgás</span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-[56px] font-extralight tracking-tight leading-[1.15] text-text-main dark:text-white mb-6">
+                    Tudatos edzés <span class="font-normal italic text-[#63886f]">hormonális érzékenységgel élőknek</span>.
+                </h1>
+
+                <p class="text-lg md:text-xl font-light text-text-muted dark:text-gray-300 leading-relaxed mb-8 max-w-lg">
+                    Kifejezetten <strong>inzulinrezisztenciával, pajzsmirigy alulműködéssel és hisztaminérzékenységgel</strong> küzdőknek. Biztonságos edzés, ami feltölt.
+                </p>
+
+                <!-- Location / Trust Indicator -->
+                <div class="flex items-center gap-4 mt-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-[#f0f2f0] dark:bg-white/10 text-terracotta">
+                        <span class="material-symbols-outlined">location_on</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-medium text-text-main dark:text-white">F&M fitness and more</span>
+                        <span class="text-sm text-text-muted dark:text-gray-400">Mom Park mellett</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content (Visual & Form) -->
+        <!-- Updated padding: reduced top padding on mobile (pt-4) to make it compact with text above -->
+        <div class="flex-1 relative flex items-center justify-center lg:justify-end px-6 pt-4 pb-12 md:px-12 lg:pr-20 lg:pl-0 lg:py-12">
+            
+            <!-- Abstract Background Shape for Calmness -->
+            <div class="absolute inset-0 z-0 opacity-40 lg:opacity-100">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#f2f7f4] via-[#fafbf9] to-[#edf3ef] rounded-full blur-3xl dark:from-green-900/10 dark:to-transparent"></div>
+            </div>
+
+            <!-- Main Image (Subtle Background) -->
+            <div class="absolute inset-y-0 right-0 w-full lg:w-[90%] h-full z-0 overflow-hidden rounded-l-[3rem] hidden lg:block">
+                 <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdII5gxrjU531D-hFdv7kzu2-iA9T6c4KK0o-E3Wk1EbQ9h-ZnjsCj1WPDiIBKG2CULKJ9pqNV2Aq6cyQLQuFeUH4jFEYPOC9bcHkoEWMUfBvnpUvBMAeGHR3tUrX-tgl92a1jxfCvsEIVf0Sl6ImFz4Y55akQH_w_R75N2CKScVrQj1PWTBGsK4Z93OLK4K0q1kQQ5cPAPoAGEU-ko-bltLerLrxnjZRZrnq7gj7C80ycWdo_ZnvL7rWod9BEqX9SvElrcSTUlkm9"
+                      alt="Woman stretching gently in a sunlit room, smiling peacefully" 
+                      class="w-full h-full object-cover object-center opacity-90 dark:opacity-60 mix-blend-multiply dark:mix-blend-overlay filter saturate-[0.8]"
+                      data-alt="Woman stretching gently in a sunlit room, smiling peacefully">
+                 <div class="absolute inset-0 bg-gradient-to-l from-transparent via-background-light/20 to-background-light dark:to-background-dark"></div>
+            </div>
+
+            <!-- Floating Form Card -->
+            <div class="relative w-full max-w-[440px] bg-white dark:bg-[#1a2c20] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 dark:border-white/10 p-6 z-20 overflow-hidden">
+                <h3 class="text-2xl text-center text-text-main dark:text-white font-semibold mb-4">Jelentkezés próbaórára</h3>
+                <div style="width:100%;height:500px;" data-fillout-id="dPo6E5t5aKus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div><script src="https://server.fillout.com/embed/v1/"></script>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Mobile Image fallback REMOVED as requested -->
+
+    <!-- 2. Section: Problem Reflection -->
+    <section class="py-24 px-6 md:px-12 bg-white dark:bg-[#16261e]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-16 lg:gap-24">
+                
+                <!-- Image Side (Trainer) -->
+                <div class="w-full md:w-1/2 relative">
+                    <div class="aspect-[4/5] md:aspect-square w-full max-w-md mx-auto relative">
+                        <!-- Decorative element -->
+                        <div class="absolute -top-6 -left-6 w-full h-full border-2 border-[#e8f3ec] dark:border-white/5 rounded-[2rem] z-0"></div>
+                        
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYmXfO01g4X0j7T-nU5lI4a6Jg2O1uTq9sW3pX9L8eF4K7aV5yQ2I6zB0dJ1c3nE4rG5tH8wM9kL2vX3sZ6aY1oU7pI9qW8rE5tT2yR0uI1oK4pL6jS3hF9dG8aV7bC0mN2qX5wE9rT1yU4iO6pL3aK8sJ2dH5fG9wL0zM7nQ4vX1cR6oE3tY8uI2pA9sD4fH7jK1lM5n" 
+                             alt="Professional fitness trainer smiling empathetically" 
+                             class="w-full h-full object-cover rounded-[2rem] shadow-lg relative z-10 filter sepia-[0.1]"
+                             data-alt="Professional fitness trainer smiling empathetically">
+                    </div>
+                </div>
+
+                <!-- Text Side (Validation) -->
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-light text-text-main dark:text-white mb-6 leading-tight">
+                        Ismerős ez a <span class="font-normal italic text-terracotta/90">helyzet</span>?
+                    </h2>
+                    
+                    <p class="text-lg font-light text-text-muted dark:text-gray-300 mb-10 leading-relaxed">
+                        Nem vagy egyedül, ha úgy érzed, a tested más szabályok szerint működik, mint másoké. Inzulinrezisztencia vagy pajzsmirigy zavarok mellett a "csak akarni kell" nem elég.
+                    </p>
+
+                    <div class="space-y-8">
+                        <!-- Point 1 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fdf2f0] dark:bg-terracotta/20 text-terracotta">
+                                    <span class="material-symbols-outlined text-[18px]">sentiment_dissatisfied</span>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-medium text-text-main dark:text-white mb-2">Lassú eredmények vagy visszaesés</h3>
+                                <p class="text-text-muted dark:text-gray-400 font-light text-sm leading-relaxed">
+                                    Hiába tartod a diétát és edzel keményen, a mérleg nyelve alig mozdul, vagy a kezdeti sikerek után gyorsan visszatérnek a kilók.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fdf2f0] dark:bg-terracotta/20 text-terracotta">
+                                    <span class="material-symbols-outlined text-[18px]">battery_alert</span>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-medium text-text-main dark:text-white mb-2">Fájdalmak és kimerültség</h3>
+                                <p class="text-text-muted dark:text-gray-400 font-light text-sm leading-relaxed">
+                                    Edzés után nem feltöltődsz, hanem napokig tartó ólmos fáradtságot vagy ízületi fájdalmakat érzel. A tested jelez, hogy valami nincs rendben.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[#fdf2f0] dark:bg-terracotta/20 text-terracotta">
+                                    <span class="material-symbols-outlined text-[18px]">psychology_alt</span>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-medium text-text-main dark:text-white mb-2">Ellentmondó tanácsok zaja</h3>
+                                <p class="text-text-muted dark:text-gray-400 font-light text-sm leading-relaxed">
+                                    Egyik helyen a kardiót javasolják, máshol tiltják. Elvesztél az interneten keringő információk között, és már nem tudod, mi tesz jót neked.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Section: Approach / Differentiation -->
+    <section id="method" class="py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark border-t border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-light text-text-main dark:text-white mb-6">
+                    Miért más ez a <span class="font-normal italic text-[#5c8a6f]">megközelítés</span>?
+                </h2>
+                <p class="text-lg font-light text-text-muted dark:text-gray-300 leading-relaxed">
+                    Nem egy újabb 12 hetes "csodamódszer". A hormonális egyensúly helyreállítása nem sprint, hanem egy olyan út, ahol a tested jelzései diktálják a tempót.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 bg-white dark:bg-[#16261e] rounded-2xl shadow-sm border border-black/5 dark:border-white/5 hover:shadow-md hover:border-[#5c8a6f]/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-[#e8f3ec] dark:bg-[#5c8a6f]/20 rounded-xl flex items-center justify-center text-[#5c8a6f] dark:text-[#7ab092] mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">monitor_heart</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Állapot-figyelembe vétel</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed font-light">
+                        Az edzést mindig az aktuális energiaszintedhez igazítjuk. Nem terheljük túl a szervezetet, ha pihenésre van szüksége.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 bg-white dark:bg-[#16261e] rounded-2xl shadow-sm border border-black/5 dark:border-white/5 hover:shadow-md hover:border-[#5c8a6f]/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-[#e8f3ec] dark:bg-[#5c8a6f]/20 rounded-xl flex items-center justify-center text-[#5c8a6f] dark:text-[#7ab092] mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">stairs</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Fokozatosság elve</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed font-light">
+                        Nem nulláról százra. Szisztematikusan építjük fel az erőt, hogy a testednek legyen ideje adaptálódni sérülés nélkül.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 bg-white dark:bg-[#16261e] rounded-2xl shadow-sm border border-black/5 dark:border-white/5 hover:shadow-md hover:border-[#5c8a6f]/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-[#e8f3ec] dark:bg-[#5c8a6f]/20 rounded-xl flex items-center justify-center text-[#5c8a6f] dark:text-[#7ab092] mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">self_improvement</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Nincs teljesítménykényszer</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed font-light">
+                        Itt nincs verseny. A cél nem a rekordok döntése, hanem hogy energikusabbnak és jobban érezd magad a bőrödben.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-8 bg-white dark:bg-[#16261e] rounded-2xl shadow-sm border border-black/5 dark:border-white/5 hover:shadow-md hover:border-[#5c8a6f]/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-[#e8f3ec] dark:bg-[#5c8a6f]/20 rounded-xl flex items-center justify-center text-[#5c8a6f] dark:text-[#7ab092] mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">shield</span>
+                    </div>
+                    <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Prevenció és biztonság</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400 leading-relaxed font-light">
+                        Kiemelt figyelmet fordítunk a mélyizmokra és a helyes kivitelezésre, hogy megelőzzük a sérüléseket hosszú távon.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Section: About Me -->
+    <section id="about" class="py-24 px-6 md:px-12 bg-white dark:bg-[#16261e]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
+                
+                <!-- Text Side -->
+                <div class="w-full lg:w-3/5 order-2 lg:order-1">
+                    <span class="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider text-terracotta bg-[#fdf2f0] dark:bg-terracotta/20 rounded-full uppercase">
+                        Rólam
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-light text-text-main dark:text-white mb-8">
+                        Szia, örülök, hogy <span class="font-normal italic text-[#5c8a6f]">itt vagy!</span>
+                    </h2>
+
+                    <div class="prose prose-lg text-text-muted dark:text-gray-300 font-light mb-10">
+                        <p class="mb-4">
+                            Ez már önmagában azt jelzi, hogy benned is elindult valami! Lehet, hogy elhatároztad magad, hogy változtatni szeretnél, de nem tudod, mi a helyes irány.
+                        </p>
+                        <p class="mb-4">
+                            Lehet, hogy edzettél már korábban, vagy most is próbálkozol, de csak találgatod, mi lenne a jó edzésterv, és a kivitelezés közben jön a hátfájás, térdfájás. Vagy egyszerűen csak túl sok az információ, és a munkád mellett nincs energiád egyedül kitalálni az utat.
+                        </p>
+                        <p class="font-normal text-text-main dark:text-white border-l-2 border-[#5c8a6f] pl-6 my-8 italic">
+                            "Pontosan tudom, milyen ez. 10 évig dolgoztam irodai környezetben, inzulinrezisztenciával, pajzsmirigy alulműködéssel és hisztaminérzékenységgel élve."
+                        </p>
+                        <p>
+                            Sokszor éreztem elkeseredést, de végigmentem az úton. Most abban tudlak segíteni, hogy neked ne kelljen mindent egyedül kitalálnod. Szeretnék az az edző lenni melletted, aki őszinte, lelkiismeretes, és végigkísér az új önmagad felé.
+                        </p>
+                    </div>
+
+                    <!-- Credentials -->
+                    <div class="mb-10">
+                        <h3 class="text-lg font-medium text-text-main dark:text-white mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[#5c8a6f]">school</span>
+                            Tanulmányok
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-text-muted dark:text-gray-400">
+                                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-[#5c8a6f] flex-shrink-0"></span>
+                                <span><strong>Medical Exercise Specialist (MES)</strong> – IWI International Fitness School (folyamatban)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-text-muted dark:text-gray-400">
+                                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-[#5c8a6f] flex-shrink-0"></span>
+                                <span><strong>Sporttáplálkozási tanácsadó</strong> – IWI International Fitness School</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-text-muted dark:text-gray-400">
+                                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-[#5c8a6f] flex-shrink-0"></span>
+                                <span><strong>EuropeActive Certified Personal Trainer</strong> – IWI International Fitness School</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-text-muted dark:text-gray-400">
+                                <span class="mt-1 w-1.5 h-1.5 rounded-full bg-[#5c8a6f] flex-shrink-0"></span>
+                                <span><strong>Fitness Instructor</strong> – IWI</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Side -->
+                <div class="w-full lg:w-2/5 order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-[#e8f3ec] dark:bg-[#5c8a6f]/10 rounded-[2rem] transform rotate-3 z-0"></div>
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV2FqNqT55c-F5yv6s13X1g4V2t8B6u4J5q7N3x2L1o9K0y4W8z6R3d7H1b0C5k9E4m3F2t1G8h7J6u5L0o4N3p2Q8s1T7v6W9x5Y3u2H1o0L4p3Q8r7T6v5W9x4Y3" 
+                             alt="Bécsi Orsi fitness trainer portrait" 
+                             class="relative z-10 w-full h-auto rounded-[2rem] shadow-xl object-cover aspect-[3/4]"
+                             data-alt="Bécsi Orsi fitness trainer portrait">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Section: Location / Environment -->
+    <section id="location" class="py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark border-t border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-light text-text-main dark:text-white mb-6">
+                    Hol <span class="font-normal italic text-[#5c8a6f]">találkozunk?</span>
+                </h2>
+                <p class="text-lg font-light text-text-muted dark:text-gray-300 leading-relaxed">
+                    Sokan félnek belépni egy edzőterembe az ismeretlentől. Itt ettől nem kell tartanod. Egy modern, prémium környezetben várlak, ahol a tisztaság és a nyugalom alapvető.
+                </p>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Info & Features -->
+                <div class="space-y-8">
+                     <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-white dark:bg-[#16261e] flex items-center justify-center text-[#5c8a6f] shrink-0 shadow-sm border border-black/5 dark:border-white/5">
+                            <span class="material-symbols-outlined">location_city</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-text-main dark:text-white mb-2">F&M fitness and more</h3>
+                            <p class="text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                                Budapest, Csörsz u. 14-16, 1123<br>
+                                (MOM Park mellett)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                         <div class="w-12 h-12 rounded-xl bg-white dark:bg-[#16261e] flex items-center justify-center text-[#5c8a6f] shrink-0 shadow-sm border border-black/5 dark:border-white/5">
+                            <span class="material-symbols-outlined">fitness_center</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-text-main dark:text-white mb-2">Professzionális géppark</h3>
+                            <p class="text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                                Technogym gépek és minden eszköz, ami a biztonságos, ízületkímélő edzéshez szükséges.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                         <div class="w-12 h-12 rounded-xl bg-white dark:bg-[#16261e] flex items-center justify-center text-[#5c8a6f] shrink-0 shadow-sm border border-black/5 dark:border-white/5">
+                            <span class="material-symbols-outlined">light_mode</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-medium text-text-main dark:text-white mb-2">Tágas, világos terek</h3>
+                            <p class="text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                                Nem kell nyomorogni. A terem kialakítása biztosítja a privát szférát és a kényelmes mozgásteret.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Embed -->
+                <div class="h-[400px] w-full rounded-2xl overflow-hidden shadow-lg border border-white/50 dark:border-white/10 relative group bg-gray-100 dark:bg-[#16261e]">
+                     <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.898864812345!2d19.02166697686562!3d47.49190117117977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dbd1a88b5641%3A0x6b8015560931e9c2!2sF%26M%20fitness%20and%20more!5e0!3m2!1sen!2shu!4v1709123456789!5m2!1sen!2shu" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="grayscale hover:grayscale-0 transition-all duration-500 opacity-90 hover:opacity-100">
+                    </iframe>
+                    <!-- Badge overlaid on map -->
+                    <div class="absolute bottom-4 left-4 bg-white/90 dark:bg-black/80 backdrop-blur px-4 py-2 rounded-lg text-xs font-medium text-text-main dark:text-white shadow-sm pointer-events-none">
+                        Könnyű parkolás a MOM Parkban
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Section: Process / How it works -->
+    <section class="py-24 px-6 md:px-12 bg-white dark:bg-[#16261e]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <span class="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider text-[#5c8a6f] bg-[#e8f3ec] dark:bg-green-900/30 rounded-full uppercase">
+                    A folyamat
+                </span>
+                <h2 class="text-3xl md:text-4xl font-light text-text-main dark:text-white mb-6">
+                    Hogyan zajlik a <span class="font-normal italic text-[#5c8a6f]">próbaóra?</span>
+                </h2>
+                <p class="text-lg font-light text-text-muted dark:text-gray-300 leading-relaxed">
+                    Tudom, hogy az első lépés a legnehezebb. Ezért tettem a folyamatot olyan egyszerűvé és stresszmentessé, amennyire csak lehet.
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden lg:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#5c8a6f]/30 to-transparent"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#1a2c20] border border-[#e8f3ec] dark:border-white/5 shadow-sm flex items-center justify-center mb-6 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl font-light text-[#5c8a6f]">1.</span>
+                        </div>
+                        <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Jelentkezés</h3>
+                        <p class="text-sm text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                            Kitöltöd a fenti rövid űrlapot. Ez még nem kötelez semmire, csak jelzed az érdeklődésed.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#1a2c20] border border-[#e8f3ec] dark:border-white/5 shadow-sm flex items-center justify-center mb-6 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl font-light text-[#5c8a6f]">2.</span>
+                        </div>
+                        <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Rövid egyeztetés</h3>
+                        <p class="text-sm text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                            Felvesszük a kapcsolatot (telefonon vagy üzenetben), hogy megértsem az állapotodat és a céljaidat.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#1a2c20] border border-[#e8f3ec] dark:border-white/5 shadow-sm flex items-center justify-center mb-6 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl font-light text-[#5c8a6f]">3.</span>
+                        </div>
+                        <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">A próbaóra</h3>
+                        <p class="text-sm text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                            Egy személyre szabott, óvatos átmozgatás, ahol megismered a gépeket és a módszert. Nincs "mélyvíz".
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 rounded-full bg-white dark:bg-[#1a2c20] border border-[#e8f3ec] dark:border-white/5 shadow-sm flex items-center justify-center mb-6 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl font-light text-[#5c8a6f]">4.</span>
+                        </div>
+                        <h3 class="text-xl font-medium text-text-main dark:text-white mb-3">Döntés</h3>
+                        <p class="text-sm text-text-muted dark:text-gray-400 font-light leading-relaxed">
+                            A próbaóra után te döntesz. Nincs nyomás, nincs "sales duma". Csak ha úgy érzed, ez a te utad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Section: Social Proof / Community -->
+    <section class="py-24 px-6 md:px-12 bg-background-light dark:bg-background-dark border-t border-black/5 dark:border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-light text-text-main dark:text-white mb-4">
+                Valódi edzések, <span class="font-normal italic text-[#5c8a6f]">valódi emberek</span>
+            </h2>
+            <p class="text-text-muted dark:text-gray-400 mb-12 font-light">
+                Kövess be és nézz bele a mindennapokba: 
+            </p>
+
+            <!-- Instagram Embed Simulation -->
+            <div class="max-w-md mx-auto bg-white dark:bg-[#16261e] rounded-xl shadow-lg border border-black/5 dark:border-white/5 overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 mb-12">
+                <!-- Header -->
+                <div class="flex items-center p-4 border-b border-gray-100 dark:border-white/5">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV2FqNqT55c-F5yv6s13X1g4V2t8B6u4J5q7N3x2L1o9K0y4W8z6R3d7H1b0C5k9E4m3F2t1G8h7J6u5L0o4N3p2Q8s1T7v6W9x5Y3u2H1o0L4p3Q8r7T6v5W9x4Y3" 
+                         alt="Orsi Becsi Profile" 
+                         class="w-14 h-14 rounded-full object-cover border border-gray-100 dark:border-white/10">
+                    <div class="ml-4 text-left">
+                        <div class="flex items-center gap-1">
+                            <h3 class="font-semibold text-text-main dark:text-white text-sm">orsi.becsi.fitness</h3>
+                            <span class="material-symbols-outlined text-blue-500 text-[16px] filled">verified</span>
+                        </div>
+                        <p class="text-xs text-text-muted dark:text-gray-400 truncate">Hormon-barát edzés | Medical Exercise Specialist</p>
+                    </div>
+                    <a href="https://instagram.com/orsi.becsi.fitness" target="_blank" class="ml-auto bg-[#0095f6] hover:bg-[#1877f2] text-white text-xs font-semibold px-4 py-1.5 rounded-lg transition-colors">
+                        Follow
+                    </a>
+                </div>
+
+                <!-- Feed Grid Simulation -->
+                <div class="grid grid-cols-3 gap-0.5 bg-gray-100 dark:bg-black/20">
+                    <div class="aspect-square relative group">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArw5cWc-w9oR0yQ9v8t2K4q6P1n0L5m8J3o9I2p7R6s5T4u1V0w9X8y7Z6a5B4c3D2e1F0g9H8i7J6k5L4m3N2o1P0q9R8s7T6u5V4w3X2y1Z0a9B8c7D6e5F4g3H2i1J0k9L8m7N6o5P4q3R2s1T0u9V8w7X6y5Z4a3B2c1D0e9F8g7H6i5J4k3L2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative group">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9v2x4-z8y1A3B5c7D9e0F2g4H6i8J0k2L4m6N8o0P2r4t6v8x0z2B4c6D8e0F2g4H6i8J0k2L4m6N8o0P2r4t6v8x0z2B4c6D8e0F2g4H6i8J0k2L4m6N8o0P2r4t6v8x" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square relative group">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv4s6-g8h0j2k4l6n8p0r2t4v6x8z0B2c4D6e8F0g2H4i6J8k0L2m4N6o8P0r2t4v6x8z0B2c4D6e8F0g2H4i6J8k0L2m4N6o8P0r2t4v6x8z0B2c4D6e8F0g2H4i6J8k0L" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Footer Action -->
+                <a href="https://instagram.com/orsi.becsi.fitness" target="_blank" class="block p-3 text-center text-xs font-medium text-[#0095f6] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                    View full profile on Instagram
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-4">
+                 <a href="https://instagram.com/orsi.becsi.fitness" target="_blank" class="px-6 py-3 rounded-full bg-[#f0f2f0] dark:bg-white/10 text-text-main dark:text-white font-medium hover:bg-[#e8f3ec] hover:text-[#5c8a6f] transition-all flex items-center gap-2">
+                    <!-- Standard Material Design Instagram Path -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,5A1,1 0 0,1 19,6A1,1 0 0,1 18,7A1,1 0 0,1 17,6A1,1 0 0,1 18,5Z" />
+                    </svg>
+                    Instagram
+                </a>
+                 <a href="https://www.tiktok.com/@orsi.becsi" target="_blank" class="px-6 py-3 rounded-full bg-[#f0f2f0] dark:bg-white/10 text-text-main dark:text-white font-medium hover:bg-[#e8f3ec] hover:text-[#5c8a6f] transition-all flex items-center gap-2">
+                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.03 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.35-1.08 1.08-1.15 1.81-.06 1.28 1.04 2.55 2.43 2.64 1.42.16 2.64-.79 2.93-2.15.18-.92.26-1.87.26-2.81v-10.73c-.04-.03-.09-.06-.13-.08z"/></svg>
+                     TikTok
+                 </a>
+                 <a href="https://www.facebook.com/orsibcs" target="_blank" class="px-6 py-3 rounded-full bg-[#f0f2f0] dark:bg-white/10 text-text-main dark:text-white font-medium hover:bg-[#e8f3ec] hover:text-[#5c8a6f] transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
